@@ -5,7 +5,14 @@ import com.messaging.helper.QueueHelper;
 import com.messaging.util.QueueUtil;
 import com.rabbitmq.client.Channel;
 
+/*
+ * This class listens to the queue and processes the incoming messages
+ */
 public class QueueListener<T> {
+	/*
+	 * This method listens to the queue and processes the incoming messages
+	 * @Param("queueDetails", details of the queue from which the messages have to read)
+	 */
 	public void listenToQueue(QueueDetails queueDetails){
 		try{
 			QueueHelper helper = new QueueHelper();

@@ -1,5 +1,8 @@
 package com.messaging.dto;
 
+/*
+ * Created for holding the queue details
+ */		
 public class QueueDetails {
 	
 	private String userName;
