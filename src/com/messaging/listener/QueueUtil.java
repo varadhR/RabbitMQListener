@@ -1,8 +1,7 @@
-package com.messaging.util;
+package com.messaging.listener;
 
 import java.io.IOException;
 
-import com.messaging.dto.QueueDetails;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;

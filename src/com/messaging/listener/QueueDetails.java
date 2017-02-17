@@ -1,4 +1,4 @@
-package com.messaging.dto;
+package com.messaging.listener;
 
 /*
  * Created for holding the queue details

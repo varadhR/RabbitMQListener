@@ -1,4 +1,4 @@
-package com.messaging.processor;
+package com.messaging.listener;
 
 /*
  * This class processes the message that arrives in the queue

@@ -1,8 +1,5 @@
 package com.messaging.listener;
 
-import com.messaging.dto.QueueDetails;
-import com.messaging.helper.QueueHelper;
-import com.messaging.util.QueueUtil;
 import com.rabbitmq.client.Channel;
 
 /*

@@ -1,8 +1,7 @@
-package com.messaging.helper;
+package com.messaging.listener;
 
 import java.io.IOException;
 
-import com.messaging.processor.MessageProcessor;
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DefaultConsumer;
