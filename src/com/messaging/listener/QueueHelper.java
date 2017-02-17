@@ -10,7 +10,7 @@ import com.rabbitmq.client.Envelope;
 /*
  * This class creates a consumer and binds it to the queue, so as to read the messages  
  */
-public class QueueHelper<T> {
+public class QueueHelper {
 	/*
 	 * This method creates a message and binds it to the queue to read the messages
 	 * @Param("channel", used for sending messages to the AMQP Broker)
