@@ -1,0 +1,12 @@
+package com.messaging.listener;
+
+
+public class TextMessageProcessor implements MessageProcessor {
+
+	@Override
+	public void processMessage(byte[] message) {
+		// TODO Auto-generated method stub
+		
+	}
+		
+}
