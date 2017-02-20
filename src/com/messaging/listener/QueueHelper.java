@@ -10,7 +10,8 @@ import com.rabbitmq.client.Envelope;
 /*
  * This class creates a consumer and binds it to the queue, so as to read the messages  
  */
-public class QueueHelper {
+public class QueueHelper { 
+	private MessageProcessor messageProcessor = new TextMessageProcessor();;
 	/*
 	 * This method creates a message and binds it to the queue to read the messages
 	 * @Param("channel", used for sending messages to the AMQP Broker)
@@ -22,7 +23,8 @@ public class QueueHelper {
 				@Override
 				public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] message)
 				          throws IOException {
-				      	new MessageProcessor().processMessage(message);
+				      	// Message Processor implementation goes here.
+						messageProcessor.processMessage(message);
 				      }
 			});
 		} catch (IOException e) {
@@ -30,4 +32,5 @@ public class QueueHelper {
 			e.printStackTrace();
 		}
 	}
+	
 }
