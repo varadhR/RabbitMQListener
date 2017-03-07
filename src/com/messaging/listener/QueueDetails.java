@@ -9,17 +9,8 @@ public class QueueDetails {
 	private String password;
 	private String queueName;
 	private String exchangeName;
-	private String routingKey;
 	private String hostName;
-	private String portNumber;
 	
-	
-	public String getRoutingKey() {
-		return routingKey;
-	}
-	public void setRoutingKey(String routingKey) {
-		this.routingKey = routingKey;
-	}
 	public String getUserName() {
 		return userName;
 	}
@@ -50,13 +41,5 @@ public class QueueDetails {
 	}
 	public void setHostName(String hostName) {
 		this.hostName = hostName;
-	}
-	public String getPortNumber() {
-		return portNumber;
-	}
-	public void setPortNumber(String portNumber) {
-		this.portNumber = portNumber;
-	}
-
-	
+	}	
 }
