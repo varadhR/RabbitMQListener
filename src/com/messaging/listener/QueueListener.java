@@ -6,11 +6,15 @@ import com.rabbitmq.client.Channel;
  */
 public class QueueListener implements Runnable{
 	private QueueDetails queueDetails = null;	
+	private MessageProcessor msgProcessor = null;
+	private boolean isStopped = false;
+	private int secondsToSleep = 1000;	
 	/*
 	 * Constructor that takes queue details & the implementation for processing the incoming message 
 	 */
-	public QueueListener(QueueDetails queueDetails){
+	public QueueListener(QueueDetails queueDetails, MessageProcessor msgProcessor){
 		this.queueDetails = queueDetails; 
+		this.msgProcessor = msgProcessor;
 	}
 	
 	/* 
@@ -21,7 +25,10 @@ public class QueueListener implements Runnable{
 		try{
 			QueueHelper helper = new QueueHelper();
 			Channel c = QueueUtil.getChannel(queueDetails);	
-			helper.listenForMessages(c, queueDetails.getQueueName());			
+			while(!isStopped){
+				helper.listenForMessages(c, queueDetails.getQueueName(), msgProcessor);
+				Thread.sleep(secondsToSleep);
+			}						
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -30,6 +37,13 @@ public class QueueListener implements Runnable{
 	@Override
 	public void run() {
 		listenToQueue();		
-	}		
+	}
+	
+	/*
+	 * This function stops the thread that is listening to the queue
+	 */
+	public void exit(boolean flag){
+		this.isStopped = flag;
+	}
 	
 }
