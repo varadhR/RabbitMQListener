@@ -36,7 +36,7 @@ public class QueueUtil {
 			channel = connection.createChannel();
 			channel.exchangeDeclare(details.getExchangeName(), "topic", true);
 			channel.queueDeclare(details.getQueueName(), true, false, false, null);
-			channel.queueBind(details.getQueueName(), details.getExchangeName(), details.getRoutingKey());
+			channel.queueBind(details.getQueueName(), details.getExchangeName(), null);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,7 +53,6 @@ public class QueueUtil {
 		factory.setUsername(details.getUserName());
 		factory.setPassword(details.getPassword());
 		factory.setHost(details.getHostName());
-		factory.setPort(Integer.parseInt(details.getPortNumber()));	
 		return factory;
 	}
 	
