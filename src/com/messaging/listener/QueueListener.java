@@ -24,9 +24,9 @@ public class QueueListener implements Runnable{
 	public void listenToQueue(){
 		try{
 			QueueHelper helper = new QueueHelper();
-			Channel c = QueueUtil.getChannel(queueDetails);	
+			Channel channel = QueueUtil.getChannel(queueDetails);	
 			while(!isStopped){
-				helper.listenForMessages(c, queueDetails.getQueueName(), msgProcessor);
+				helper.listenForMessages(channel, queueDetails.getQueueName(), msgProcessor);
 				Thread.sleep(secondsToSleep);
 			}						
 		}catch(Exception e){
