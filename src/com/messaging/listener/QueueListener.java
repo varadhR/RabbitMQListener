@@ -42,7 +42,7 @@ public class QueueListener implements Runnable{
 	/*
 	 * This function stops the thread that is listening to the queue
 	 */
-	public void exit(boolean flag){
+	public void stopListening(boolean flag){
 		this.isStopped = flag;
 	}
 	
